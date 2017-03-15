@@ -47,14 +47,14 @@ vsm -a list
 Creating a site does the following:
 
 * Halts Vagrant (if running)
-* Creates a web root for the site in the `www` folder and provision folder containing three files: `vvv-init.sh` and `vvv-hosts` and `vvv-nginx.conf`
+* Creates a web root for the site in the `www` folder and `wp-cli.yml` file inside it. In addition script creates a provision folder containing three files: `vvv-init.sh` and `vvv-hosts` and `vvv-nginx.conf`
+	* `wp-cli.yml` tells WP-CLI that WordPress is in the public_html folder
 	* `vvv-init.sh` tells Vagrant to create a database if one does not exist and install the latest version of WordPress (via WP-CLI) the next time Vagrant is provisioned
-	* `wp-cli.yml` tells WP-CLI that WordPress is in the htdocs folder
 	* `vvv-hosts` contains the hosts entry to give your site a nice custom domain (the domain is set in the wizard)
-* Creates a file in the `nginx-config` folder to handle server settings for your site
+	* `vvv-nginx.conf` to handle server settings for your site
 * Restarts Vagrant with `vagrant up --provision`
 
-Provisioning Vagrant takes a couple of minutes, but this is a crucial step as it downloads WordPress into your site's htdocs directory and runs the installation. If you want to skip provisioning and install WordPress manually, you can run the new site's `vvv-init.sh` file directly in the Vagrant shell.
+Provisioning Vagrant takes a couple of minutes, but this is a crucial step as it downloads WordPress into your site's public_html directory and runs the installation. If you want to skip provisioning and install WordPress manually, you can run the new site's `vvv-init.sh` file directly in the Vagrant shell.
 
 ## Site Teardown Wizard
 
