@@ -1,24 +1,22 @@
-# VVV Site Wizard
+# Valu Site Manager
 
 ## Important:
 
-**I'm not very active on this project, but [bradp](https://github.com/bradp) is doing great work on his fork of this project, [Variable VVV](https://github.com/bradp/vv).**
+Version 1.1.4
 
-Version 1.1.3
-
-This bash script makes it easy to spin up a new WordPress site using [Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/VVV).
+This bash script makes it easy to spin up a new WordPress site using [Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/VVV) version 2.
 
 ## Installation
 
-Download the script and run `./vvv` from the directory the script is placed in.
+Download the script and run `./vsm` from the directory the script is placed in.
 
-To run the script from anywhere, you can place `vvv` in a folder included in your PATH environment variable.
+To run the script from anywhere, you can place `vsm` in a folder included in your PATH environment variable.
 
 If you don't want to define the path each time you run the script, open the file and uncomment the line at the top defining `path`. Set that to the root folder of VVV on your machine. **Note:** You do not need to do this if VVV is installed in the default location (`~/vagrant-local/`).
 
 ## Usage
 
-Type `vvv` in the command line to use. None of the options are required: if a required piece of information is not included in the original command, the wizard will prompt you for it.
+Type `vsm` in the command line to use. None of the options are required: if a required piece of information is not included in the original command, the wizard will prompt you for it.
 
 ### Options
 
@@ -37,11 +35,11 @@ Type `vvv` in the command line to use. None of the options are required: if a re
 Examples:
 
 ```
-vvv -a new
-vvv -a create -n mysite -d mysite.dev -v 3.9.1 -x
-vvv -a make -fxil mysite.com -n mysite -d mysite.dev -v 3.9.1
-vvv -a delete mysite
-vvv -a list
+vsm -a new
+vsm -a create -n mysite -d mysite.dev -v 3.9.1 -x
+vsm -a make -fxil mysite.com -n mysite -d mysite.dev -v 3.9.1
+vsm -a delete mysite
+vsm -a list
 ```
 
 ## Site Creation Wizard
@@ -49,7 +47,7 @@ vvv -a list
 Creating a site does the following:
 
 * Halts Vagrant (if running)
-* Creates a web root for the site in the `www` folder containing three files: `vvv-init.sh`, `wp-cli.yml`, and `vvv-hosts`
+* Creates a web root for the site in the `www` folder and provision folder containing three files: `vvv-init.sh` and `vvv-hosts` and `vvv-nginx.conf`
 	* `vvv-init.sh` tells Vagrant to create a database if one does not exist and install the latest version of WordPress (via WP-CLI) the next time Vagrant is provisioned
 	* `wp-cli.yml` tells WP-CLI that WordPress is in the htdocs folder
 	* `vvv-hosts` contains the hosts entry to give your site a nice custom domain (the domain is set in the wizard)
@@ -63,16 +61,15 @@ Provisioning Vagrant takes a couple of minutes, but this is a crucial step as it
 Deleting a site does the following:
 
 * Halts Vagrant (if running)
-* Deletes the site's web root (which deletes the `vvv-init.sh`, `wp-cli.yml`, and `vvv-hosts` files as well)
-* Deletes the file in the `nginx-config` folder pertaining to the site
+* Deletes the site's web root
 
 Note that it does not delete the site's database.
 
-## Questions?
-
-Ping me on Twitter at [@alisothegeek](http://twitter.com/alisothegeek).
-
 ## Changelog
+
+### 1.1.4
+
+* VVV 2.0 compatibility
 
 ### 1.1.3
 
