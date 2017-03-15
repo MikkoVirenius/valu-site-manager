@@ -2,7 +2,7 @@
 
 ## Important:
 
-Version 1.1.4
+Version 1.0
 
 This bash script makes it easy to spin up a new WordPress site using [Varying Vagrant Vagrants](https://github.com/Varying-Vagrant-Vagrants/VVV) version 2.
 
@@ -67,35 +67,6 @@ Note that it does not delete the site's database.
 
 ## Changelog
 
-### 1.1.4
-
-* VVV 2.0 compatibility
-
-### 1.1.3
-
-* Fix forward slashes in a live site URL (used for the image proxy) causing an error
-* Fix done_text implementation in the site teardown wizard
-
-### 1.1.2
-
-* Add the ability to load images by proxy from the live site (props [@TheLastCicada](https://gist.github.com/TheLastCicada/ee6775c5f269f5f5389f))
-* Fix bug where wp_debug was not set properly when set via command option
-
-### 1.1.1
-
-* Add default VVV install path to script (if VVV is installed in default location, `path` no longer needs to be explicitly defined)
-
-### 1.1
-
-* Add ability to select WordPress version (props [@adamsilverstein](https://github.com/aliso/vvv-site-wizard/pull/10))
-* Add ability to define `WP_DEBUG` and `WP_DEBUG_LOG`
-* Convert positional parameters to command line options for maximum flexibility
-
-### 1.0.1
-
-* Switch to using WP-CLI instead of SVN to install WordPress
-* Allow for tab completions when defining directories
-
 ### 1.0
 
-* Initial release
+* Initial release for VVV 2.0

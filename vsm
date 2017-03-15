@@ -3,9 +3,9 @@
 # =============================================================================
 # VVV Site Setup Script
 # By Mikko Virenius <mikko.virenius@valu.fi>
-# https://github.com/aliso/vvv-site-wizard
+# https://github.com/MikkoVirenius/valu-site-manager
 #
-# Version 1.1.4
+# Version 1.0
 #
 # This script automates the creation & deletion of new WordPress sites using
 # Varying Vagrant Vagrants (https://github.com/Varying-Vagrant-Vagrants/VVV).
